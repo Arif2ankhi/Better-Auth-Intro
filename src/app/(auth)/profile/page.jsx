@@ -15,22 +15,23 @@ import {
 } from "@heroui/react";
 
 import { updateUser} from "@/lib/auth-client";
+import { Toast, toast } from '@heroui/react';
 
 
 export default function ProfilePage() {
   const handleUpdateUser = async (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const userData = Object.fromEntries(formData.entries())
     
-    console.log('in the user update', userData);
+    console.log('in the form data', userData);
 
     // alert("Form submitted successfully!");
     const resData = await updateUser({
-        name:userData.name
+        name: userData.name
 
     })
-    console.log('after submit user profilre will update', resData);
+    console.log('after submit user profile', resData);
   };
 
   return (
@@ -58,12 +59,16 @@ export default function ProfilePage() {
          
         </FieldGroup>
         <Fieldset.Actions>
+          Show toast
           <Button type="submit">
             <FloppyDisk />
+            
             Save changes
           </Button>
           <Button type="reset" variant="secondary">
             Cancel
+            
+
           </Button>
         </Fieldset.Actions>
       </Fieldset>

@@ -4,6 +4,8 @@ import { signIn } from "@/lib/auth-client";
 import { Eye, EyeSlash } from "@gravity-ui/icons";
 import { Button, Description, FieldError, Form, Input, InputGroup, Label, TextField } from "@heroui/react";
 import { useState } from "react";
+import { toast} from "@heroui/react";
+import Link from "next/link";
 
 
 const SignInPage = () => {
@@ -85,6 +87,7 @@ const SignInPage = () => {
                 </TextField>
                
                 <div className="flex gap-2">
+                      Show toast
                     <Button type="submit">
                         {/* <Check /> */}
                         Submit
@@ -94,6 +97,11 @@ const SignInPage = () => {
                     </Button>
                 </div>
             </Form>
+
+            <p> <small>Forgot Password? <Link
+            className="text-blue-400 underline"
+            href = "/forgot-password">Click Here</Link></small> </p>
+
         </div>
     );
 };
