@@ -12,7 +12,7 @@ const ForgotPasswordPage = () => {
         const formData = new FormData(e.currentTarget);
         const userData = Object.fromEntries(formData.entries());
 
-        // console.log('user data before submit', userData);
+        console.log('user data before submit', userData);
 
         const resData = await requestPasswordReset({
             email: userData.email,

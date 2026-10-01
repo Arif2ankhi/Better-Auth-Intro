@@ -13,6 +13,7 @@ export const auth = betterAuth({
     requireEmailVerification: true,
     sendResetPassword: async ({ user, url, token }, request) => {
       void resend.emails.send({
+    //   await resend.emails.send({
         from: "Acme <onboarding@resend.dev>",
         to: user.email,
         subject: "Reset Your password",
